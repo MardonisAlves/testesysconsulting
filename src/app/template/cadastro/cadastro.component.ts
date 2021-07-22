@@ -21,7 +21,7 @@ id:any
       id: 0,
       nome : f.value.nome ,
       cargo: f.value.cargo,
-      totalHorasTrabalhadas: 0
+      totalHorasTrabalhadas: f.value.totalHorasTrabalhadas
     }
     
     this.funcionarioService.cadastroFuncionario(funcionario)

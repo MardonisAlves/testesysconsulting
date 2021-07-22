@@ -4,7 +4,7 @@
   <form #f="ngForm" (ngSubmit)="cadastro(f)">
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Nome</label>
+          <label for="nome">Nome</label>
           <input type="text" class="form-control" id="nome" placeholder="Nome" ngModel name="nome">
         </div>
         <div class="form-group col-md-6">
@@ -18,16 +18,8 @@
           </select>
         </div>
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Horas planejadas</label>
-          <input type="number" class="form-control" id="nome" placeholder="0" ngModel name="HorasPlanejadas">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="cargo">Turnos</label>
-          <select id="turno" class="form-control" ngModel name="turno">
-            <option value="">Escolha o turno</option>
-            <option value="plantoesDiurnos">Diurno</option>
-            <option value="plantoesNoturnos">Noturno</option>
-          </select>
+          <label for="totalHorasTrabalhadas">Horas Trabalhadas</label>
+          <input type="number" class="form-control" id="totalHorasTrabalhadas" placeholder="0" ngModel name="totalHorasTrabalhadas">
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Cadastrar</button>

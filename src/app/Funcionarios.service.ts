@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Funcionarios } from './model/Funcionarios';
-import {tap} from 'rxjs/operators'
 import { plantoes } from './model/plantoes';
 
 @Injectable({

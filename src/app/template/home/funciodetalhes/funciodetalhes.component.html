@@ -28,4 +28,29 @@
       <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
 
+    <h3 class="mt-3">horas diurnas</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">HorasPlanejadas</th>
+          <th scope="col">HorasFeitas</th>
+          <th scope="col">HorasCorrigidas</th>
+          <th scope="col">horas reais</th>
+          <th> total de horas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of horasDiurnas">
+          <td>{{item.HorasPlanejadas}}</td>
+          <td>{{item.HorasFeitas}}</td>
+          <td>{{item.HorasCorrigidas}}</td>
+          <td>Horas reais</td>
+          <td>Horas totais</td>
+          <td>
+            <a class= "btn btn-danger" (click)="deleteHorasDiurna(item.funcionarioId)">remover</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>   
+
 </div>

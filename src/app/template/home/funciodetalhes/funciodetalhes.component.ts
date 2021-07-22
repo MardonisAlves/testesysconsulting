@@ -9,12 +9,13 @@ import { Funcionarios } from 'src/app/model/Funcionarios';
   styleUrls: ['./funciodetalhes.component.css']
 })
 export class FunciodetalhesComponent implements OnInit {
-  horasNoturnas: Funcionarios[] = []
-
+  horasDiurnas: any
+  horasNoturnas: any
   constructor(private route:ActivatedRoute,private funcionarioService:FuncionariosService) { }
 
   ngOnInit(): void {
-    
+    this.getHorasDiurna()
+    this.getHorasNotunas()
   }
   cadastroHoras(f:NgForm){
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -28,12 +29,36 @@ export class FunciodetalhesComponent implements OnInit {
     if(f.value.turno == "plantoesDiurnos"){
       console.log(horas)
       this.funcionarioService.plantoesDiurnos(horas).subscribe()
-    }else{
+    }else if(f.value.turno == "plantoesNoturnos"){
       console.log('plantoesNoturnos')
       this.funcionarioService.plantoesNoturnos(horas).subscribe()
       
     }
   }
+
+  getHorasDiurna(){
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.funcionarioService.getDiurnos(id).subscribe(
+      horasDiurnas => this.horasDiurnas = horasDiurnas
+
+    )
+  }
+
+  getHorasNotunas(){
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.funcionarioService.getNoturnos(id).subscribe(
+      horasNoturnas => this.horasNoturnas = horasNoturnas
+    )
+  }
+
+  deleteHorasDiurna(id:number){
+    this.funcionarioService.deleteHorasDiurna(id).subscribe()
+  }
+
+  deleteHoraNoturna(id:number){
+
+  }
+
 
 
 }

@@ -35,7 +35,15 @@ export class FuncionariosService {
   }
   /*getDiurno by id*/
   getDiurnos(id:number):Observable<Funcionarios>{
-    return this.http.get<Funcionarios>(`${this.url}/plantoesDiurnos/${id}`)
+    return this.http.get<Funcionarios>(`${this.url}/plantoesDiurnos?funcionarioId=${id}`)
+  }
+
+  /*deleteDiurna*/
+  deleteHorasDiurna(id:number):Observable<Funcionarios>{
+    return this.http.delete<Funcionarios>(`${this.url}/plantoesDiurnos/${id}`)
+  }
+  deleteHorasNoturnas(id:number):Observable<Funcionarios>{
+    return this.http.delete<Funcionarios>(`${this.url}/plantoesNoturnos/${id}`)
   }
     /*header*/
     httpOptions = {

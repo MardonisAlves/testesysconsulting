@@ -25,7 +25,7 @@ export class FuncionariosService {
 
    /*getFuncionarios*/
   getFuncionarios():Observable<Funcionarios>{
-    return this.http.get<Funcionarios>(`${this.url}/funcionarios`)   
+    return this.http.get<Funcionarios>(`${this.url}/funcionarios?_embed=plantoesNoturnos&_embed=plantoesDiurnos`)
   }
   
 

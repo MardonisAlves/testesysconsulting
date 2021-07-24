@@ -28,10 +28,10 @@ export class FunciodetalhesComponent implements OnInit {
     }
     if(f.value.turno == "plantoesDiurnos"){
       console.log(horas)
-      this.funcionarioService.plantoesDiurnos(horas).subscribe()
+     // this.funcionarioService.plantoesDiurnos(horas).subscribe()
     }else if(f.value.turno == "plantoesNoturnos"){
       console.log('plantoesNoturnos')
-      this.funcionarioService.plantoesNoturnos(horas).subscribe()
+      //this.funcionarioService.plantoesNoturnos(horas).subscribe()
       
     }
   }
